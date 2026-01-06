@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
+# LanguageUnlearn - IELTS Learning App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+LanguageUnlearn is a comprehensive language learning platform (IELTS, German, French, Spanish) built with React, TypeScript, and Vite. It provides practice exercises and study materials for Listening, Reading, Writing, and Speaking (LRWS).
 
-Currently, two official plugins are available:
+## Screenshots
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![LanguageUnlearn Dashboard](./public/landingpage.png)
+*App interface showing the dashboard and learning sections.*
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **LRWS Modules**: Dedicated sections for Listening, Reading, Writing, and Speaking.
+- **Practice Quizzes**: Interactive exercises to test your skills.
+- **Progress Tracking**: (Add details if available)
+- **Modern UI**: Clean and intuitive design for focused learning.
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Follow these steps to set up the project locally:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Clone the repository**:
+   ```bash
+   git clone <repository-url>
+   cd LanguageUnlearn
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+2. **Install dependencies**:
+   Make sure you have [Node.js](https://nodejs.org/) installed. Then run:
+   ```bash
+   npm install
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+   The application will be available at `http://localhost:5173/` (or the port shown in your terminal).
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+4. **Build for production**:
+   ```bash
+   npm run build
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Technologies Used
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- React 19
+- TypeScript
+- Vite
+- Framer Motion (for animations)
+- Lucide React (for icons)
+- React Router DOM (for navigation)
+

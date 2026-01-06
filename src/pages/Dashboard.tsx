@@ -16,8 +16,8 @@ const Dashboard = () => {
     return (
         <div className="dashboard">
             <header className="dashboard-header">
-                <h1>Welcome back, Learner!</h1>
-                <p>Ready to improve your IELTS score today?</p>
+                <h1>Welcome to Lang Pro!</h1>
+                <p>Your journey to mastering new languages starts here.</p>
             </header>
 
             <section className="stats-grid">
