@@ -29,6 +29,7 @@ const Sidebar = () => {
         },
         { name: 'German', isMain: false, subItems: [] },
         { name: 'French', isMain: false, subItems: [] },
+        { name: 'Spanish', isMain: false, subItems: [] },
     ];
 
     return (

@@ -60,78 +60,154 @@
 }
 
 .featured-section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 24px;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: var(--text-primary);
 }
 
-.featured-grid {
+.projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
 }
 
-.featured-card {
+.project-card {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 32px;
-  position: relative;
+  border-radius: var(--radius-xl);
   overflow: hidden;
   display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.project-preview {
+  position: relative;
+  height: 180px;
+  background-color: var(--bg-tertiary);
+  overflow: hidden;
+}
+
+.preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+}
+
+.placeholder-icon {
+  opacity: 0.2;
+  color: var(--text-primary);
+}
+
+.preview-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .preview-overlay {
+  opacity: 1;
+}
+
+.btn-demo {
+  background-color: white;
+  color: #1e293b;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .btn-demo {
+  transform: translateY(0);
+}
+
+.project-info {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-header {
+  display: flex;
   justify-content: space-between;
-}
-
-.featured-card.accent {
-  background: linear-gradient(135deg, var(--bg-secondary) 0%, #1e1b4b 100%);
-}
-
-.featured-content h3 {
-  font-size: 1.25rem;
+  align-items: flex-start;
   margin-bottom: 12px;
 }
 
-.featured-content p {
-  color: var(--text-secondary);
-  margin-bottom: 24px;
-  max-width: 300px;
+.project-header h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
 }
 
-.btn-primary, .btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  border-radius: var(--radius-md);
+.project-badge {
+  font-size: 0.75rem;
   font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background-color: var(--bg-tertiary);
+}
+
+.project-info p {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.btn-start {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
   transition: all 0.2s ease;
 }
 
-.btn-primary {
-  background-color: var(--primary);
-  color: white;
-}
+/* Color Themes */
+.project-card.blue { border-bottom: 4px solid var(--primary); }
+.project-card.blue .btn-start:hover { background-color: var(--primary); color: white; }
 
-.btn-primary:hover {
-  background-color: var(--primary-hover);
-}
+.project-card.amber { border-bottom: 4px solid var(--secondary); }
+.project-card.amber .btn-start:hover { background-color: var(--secondary); color: white; }
 
-.btn-secondary {
-  border: 2px solid var(--primary);
-  color: var(--primary);
-}
+.project-card.emerald { border-bottom: 4px solid var(--accent); }
+.project-card.emerald .btn-start:hover { background-color: var(--accent); color: white; }
 
-.btn-secondary:hover {
-  background-color: var(--primary);
-  color: white;
-}
-
-.featured-badge {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  background-color: var(--bg-tertiary);
-  padding: 4px 12px;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 600;
-}
+.project-card.rose { border-bottom: 4px solid var(--danger); }
+.project-card.rose .btn-start:hover { background-color: var(--danger); color: white; }
