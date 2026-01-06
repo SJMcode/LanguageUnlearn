@@ -1,13 +1,21 @@
 .practice-page {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
 .practice-header {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .practice-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
 }
 
 .practice-title h1 {
@@ -35,16 +43,29 @@
 
 .practice-content.split-view {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 20px;
   align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .practice-content.split-view {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
 }
 
 .card {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: 24px;
+  }
 }
 
 .card h3 {

@@ -11,7 +11,14 @@ import {
 } from 'lucide-react';
 import '../styles/Sidebar.css';
 
-const Sidebar = () => {
+import { X } from 'lucide-react';
+
+interface SidebarProps {
+    isOpen: boolean;
+    onClose: () => void;
+}
+
+const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
     const mainNav = [
         { name: 'Dashboard', path: '/', icon: <LayoutDashboard size={20} /> },
     ];
@@ -33,10 +40,15 @@ const Sidebar = () => {
     ];
 
     return (
-        <aside className="sidebar">
+        <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
             <div className="sidebar-header">
-                <GraduationCap className="logo-icon" size={32} />
-                <span className="logo-text">Lang Pro</span>
+                <div className="logo-wrapper">
+                    <GraduationCap className="logo-icon" size={32} />
+                    <span className="logo-text">Lang Pro</span>
+                </div>
+                <button className="sidebar-close" onClick={onClose}>
+                    <X size={24} />
+                </button>
             </div>
 
             <nav className="sidebar-nav">
@@ -44,6 +56,7 @@ const Sidebar = () => {
                     <NavLink
                         key={item.path}
                         to={item.path}
+                        onClick={onClose}
                         className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
                     >
                         {item.icon}
@@ -65,6 +78,7 @@ const Sidebar = () => {
                                     <NavLink
                                         key={item.path}
                                         to={item.path}
+                                        onClick={onClose}
                                         className={({ isActive }) => `sub-nav-link ${isActive ? 'active' : ''}`}
                                     >
                                         {item.icon}

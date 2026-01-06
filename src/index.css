@@ -22,10 +22,18 @@
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   
-  --sidebar-width: 260px;
-  --header-height: 64px;
+  --sidebar-width: 0px;
+  --header-height: 60px;
   
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Desktop Overrides */
+@media (min-width: 1024px) {
+  :root {
+    --sidebar-width: 260px;
+    --header-height: 64px;
+  }
 }
 
 * {
@@ -53,10 +61,4 @@ button {
   outline: none;
   background: none;
   font-family: inherit;
-}
-
-@media (max-width: 768px) {
-  :root {
-    --sidebar-width: 0px;
-  }
 }
